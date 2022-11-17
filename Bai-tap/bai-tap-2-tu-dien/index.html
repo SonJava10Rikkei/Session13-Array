@@ -9,8 +9,19 @@
 </head>
 
 <body>
+
     <script>
-        let engLish = []
+        let en = ["Apple", "Banana", "Orange"];
+        let vi = ["Táo", "Chuối", "Cam"];
+
+        let input = prompt("Nhập từ cần dịch: ");
+
+        for (const key in en) {
+            if (input == en[key]) {
+                document.write(vi[key])
+            }
+        }
+
     </script>
 </body>
 
