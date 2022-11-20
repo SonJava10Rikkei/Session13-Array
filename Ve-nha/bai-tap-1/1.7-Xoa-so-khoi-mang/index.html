@@ -22,15 +22,25 @@
             if (soCanTimV == soNguyen[i]) {
                 checkAndRemoveSoNguyen = soCanTimV;
                 soCanTimV_index = i;
+
             }
 
         }
         if (checkAndRemoveSoNguyen) {
-            const soNguyenCuoiCung = soNguyen.filter(item => item != soCanTimV);
-            document.write("Mang so nguyen dau tien la " + soNguyen + "<br/>");
-            document.write("Tim thay V bang " + soCanTimV + " co nam trong mang va xoa tat ca cac phan tu bang V" + "<br/>");
+            // cach 1 chi xoa vi tri so can tim
+            soNguyen.splice(soCanTimV_index, 1);
+            // gan 0 vao vi tri cuoi cung cua mang
+            soNguyen.push(0);
+            console.log(soNguyen);
+            document.write(soNguyen);
 
-            document.write("Con mang sau khi da xoa la " + soNguyenCuoiCung);
+
+            // c2 xoa dung ten (gia tri cua so can tim)
+            // const soNguyenCuoiCung = soNguyen.filter(item => item != soCanTimV);
+            // document.write("Mang so nguyen dau tien la " + soNguyen + "<br/>");
+            // document.write("Tim thay V bang " + soCanTimV + " co nam trong mang va xoa tat ca cac phan tu bang V" + "<br/>");
+
+            // document.write("Con mang sau khi da xoa la " + soNguyenCuoiCung);
         } else {
             document.write(" V is not in the array")
         }
